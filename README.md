@@ -8,7 +8,7 @@ AdaMod requires Python 3.6.0 or later.
 
 ### Installing via pip
 
-The preferred way to install AdaModd is via `pip` with a virtual environment.
+The preferred way to install AdaMod is via `pip` with a virtual environment.
 Just run 
 ```bash
 pip install adamod
@@ -17,7 +17,7 @@ in your Python environment and you are ready to go!
 
 ### Using source code
 
-As AdaBound is a Python class with only 100+ lines, an alternative way is directly downloading
+As AdaMod is a Python class with only 100+ lines, an alternative way is directly downloading
 [adamod.py](./adamod/adamod.py) and copying it to your project.
 
 ## Usage
