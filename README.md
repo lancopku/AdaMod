@@ -3,7 +3,7 @@
 An optimizer which exerts adaptive momental upper bounds on individual learning rates to prevent them becoming undesirably lager than what the historical statistics suggest and avoid the non-convergence issue, thus to a better performance. Strong empirical results on many deep learning applications demonstrate the effectiveness of our proposed method especially on complex networks such as DenseNet and Transformer.
 
 <p align='center'>
-  <img src='img/Loss.bmp' width="60%"/>
+  <img src='img/Loss.bmp' width="100%"/>
 </p>
 
 ## Installation
