@@ -32,7 +32,7 @@ The checkpoints will be saved in the `checkpoint` folder and the data points of 
 
 You can directly run [visualization.py](./visualization.py) to make it easier to visualize the performance of AdaMod.
 
-##Acknowledgement
+## Acknowledgement
 The way of searching the best settings for baseline optimizers is referenced from Luo et al. (2019). [Adaptive Gradient Methods with Dynamic Bound of Learning Rate](https://openreview.net/forum?id=Bkg3g2R9FX). In *Proc. of ICLR 2019*.. 
 
 
