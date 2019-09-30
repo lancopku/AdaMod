@@ -5,7 +5,7 @@ __VERSION__ = '0.0.2'
 setup(name='adamod',
       version=__VERSION__,
       description='AdaMod optimization algorithm, build on PyTorch.',
-      long_description=open("README.md", errors='ignore').read(),
+      long_description=open("README.md", encoding='utf-8').read(),
       long_description_content_type="text/markdown",
       keywords=['machine learning', 'deep learning'],
       classifiers=[
