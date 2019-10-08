@@ -35,6 +35,9 @@ As described in the paper, AdaMod can smooths out unexpected large learning rate
 
 For the full list of demos, please refer to [this page](./demos).
 
+## Contributors
+
+[@luoruixuan](https://github.com/luoruixuan)
 
 
 
