@@ -20,7 +20,7 @@ def get_parser():
     parser.add_argument('--optim', default='adamod', type=str, help='optimizer',
                         choices=['sgd', 'adam', 'adamod'])
     parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
-    parser.add_argument('--gamma', default=0.999, type=float,
+    parser.add_argument('--beta3', default=0.999, type=float,
                         help=' smoothing coefficient term of AdaMod')
     parser.add_argument('--momentum', default=0.9, type=float, help='momentum term')
     parser.add_argument('--beta1', default=0.9, type=float, help='Adam coefficients beta_1')
@@ -60,11 +60,11 @@ def build_dataset():
 
 
 def get_ckpt_name(dataset='cifar100', model='resnet', optimizer='adamod', lr=0.1, momentum=0.9,
-                  beta1=0.9, beta2=0.999, gamma=0.999):
+                  beta1=0.9, beta2=0.999, beta3=0.999):
     name = {
         'sgd': 'lr{}-momentum{}'.format(lr, momentum),
         'adam': 'lr{}-betas{}-{}'.format(lr, beta1, beta2),
-        'adamod': 'lr{}-betas{}-{}-gamma{}'.format(lr, beta1, beta2, gamma),
+        'adamod': 'lr{}-betas{}-{}-{}'.format(lr, beta1, beta2, beta3),
     }[optimizer]
     return '{}-{}-{}'.format(model, optimizer, name)
 
@@ -103,7 +103,7 @@ def create_optimizer(args, model_params):
                           weight_decay=args.weight_decay)
     elif args.optim == 'adamod':
         return AdaMod(model_params, args.lr, betas=(args.beta1, args.beta2),
-                      gamma=args.gamma, weight_decay=args.weight_decay)
+                      beta3=args.beta3, weight_decay=args.weight_decay)
 
 def train(net, epoch, device, data_loader, optimizer, criterion):
     print('\nEpoch: %d' % epoch)
@@ -160,7 +160,7 @@ def main():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     ckpt_name = get_ckpt_name(model=args.model, optimizer=args.optim, lr=args.lr,
-                              momentum=args.momentum, beta1=args.beta1, beta2=args.beta2, gamma=args.gamma)
+                              momentum=args.momentum, beta1=args.beta1, beta2=args.beta2, beta3=args.beta3)
     if args.resume:
         ckpt = load_checkpoint(ckpt_name)
         best_acc = ckpt['acc']
@@ -173,7 +173,7 @@ def main():
     net = build_model(args, device, ckpt=ckpt)
     criterion = nn.CrossEntropyLoss()
     optimizer = create_optimizer(args, net.parameters())
-    scheduler = optim.lr_scheduler.MultiStepLR(optimizer, [150, 225], gamma=0.1,
+    scheduler = optim.lr_scheduler.MultiStepLR(optimizer, [150, 225], beta3=0.1,
                                                last_epoch=start_epoch)
     train_accuracies = []
     test_accuracies = []
