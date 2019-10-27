@@ -10,7 +10,7 @@ We have already provided the results produced by AdaMod with default settings an
 
 **ResNet-34/DenseNet-121:**
 
-| optimizer | lr | momentum | beta1 | beta2 | gamma |
+| optimizer | lr | momentum | beta1 | beta2 | beta3 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | SGD | 0.05 | 0.9 | | | | |
 | Adam | 0.001 | | 0.9 | 0.999 | | |
@@ -20,10 +20,10 @@ For the sake of better performance, we apply a weight decay of `5e-4` to all the
 
 ## Running by Yourself
 
-You may also run the experiment and visualize the result by yourself. The following is an example to train DenseNet-121 using AdaMod with a learning rate of 0.001 and a smoothing coefficient (i.e. **gamma**) of 0.999.
+You may also run the experiment and visualize the result by yourself. The following is an example to train DenseNet-121 using AdaMod with a learning rate of 0.001 and a smoothing coefficient (i.e. **beta3**) of 0.999.
 
 ```bash
-python main.py --model=densenet --optim=adamod --lr=0.001 --gamma=0.999
+python main.py --model=densenet --optim=adamod --lr=0.001 --beta3=0.999
 ```
 
 The checkpoints will be saved in the `checkpoint` folder and the data points of the learning curve will be save in the `curve` folder.
