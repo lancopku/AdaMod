@@ -12,7 +12,7 @@ After downloading and preprocessing the data (please refer to the original [ rep
 CUDA_VISIBLE_DEVICES=0 fairseq-train \
     data-bin/iwslt14.tokenized.de-en \
     --arch transformer_iwslt_de_en \
-    --optimizer adamod --adam-betas '(0.9, 0.98)' --gamma 0.9999 \
+    --optimizer adamod --adam-betas '(0.9, 0.98)' --beta3 0.9999 \
     --lr 5e-4 --lr-scheduler cold_start --warmup-updates 4000 \
     --dropout 0.3 --weight-decay 0.0001 \
     --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
@@ -34,7 +34,7 @@ For Transformer-base:
 ```bash
 fairseq-train data-bin/wmt14_en_de \
   --arch transformer_wmt_en_de \
-  --optimizer adamod --adam-betas '(0.9, 0.98)' --gamma 0.999 --clip-norm 0.0 \
+  --optimizer adamod --adam-betas '(0.9, 0.98)' --beta3 0.999 --clip-norm 0.0 \
   --lr-scheduler cold_start --warmup-updates 4000 \
   --lr 0.0005 --min-lr 1e-09 \
   --dropout 0.1 --weight-decay 0.0 --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
@@ -47,7 +47,7 @@ For Transformer-big:
 ```bash
 fairseq-train data-bin/wmt14_en_de \
   --arch transformer_vaswani_wmt_en_de_big \
-  --optimizer adamod --adam-betas '(0.9, 0.98)' --gamma 0.9999 --clip-norm 0.0 \
+  --optimizer adamod --adam-betas '(0.9, 0.98)' --beta3 0.9999 --clip-norm 0.0 \
   --lr-scheduler cold_start --warmup-updates 4000 \
   --lr 0.0005 --min-lr 1e-09 \
   --dropout 0.3 --weight-decay 0.0 --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
