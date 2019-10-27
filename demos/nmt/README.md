@@ -18,7 +18,7 @@ CUDA_VISIBLE_DEVICES=0 fairseq-train \
     --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
     --max-tokens 4000 --max-update 50000
 ```
-Note that for fair comparison with Adam, although AdaMod does not need lr warmup, we still keep `--warmup-updates 4000` for this setting. In fact, on the IWSLT'14 De-En dataset, AdaMod does not even need any `--lr-scheduler` and just set a suitable lr (e.g. 5e-4), you can get higher BLEU4 score up to `35.1`. What's more, if you further use `--update-freq` option for delay updating, the state-of-the-art result `35.6` will be achieved.
+Note that for fair comparison with Adam, we still hold `--warmup-updates 4000` for this setting. In fact, on the IWSLT'14 De-En dataset, AdaMod does not depend on any `--lr-scheduler`. A constant lr (e.g. 5e-4) can achieve higher BLEU4 score up to `35.1`. What's more, if you further use `--update-freq` option for delay updating, the state-of-the-art result `35.6` will be achieved.
 
 Then you need to average 10 latest checkpoints:
 ```bash
