@@ -27,9 +27,9 @@ As AdaMod is a Python class with only 100+ lines, an alternative way is directly
 You can use AdaMod just like any other PyTorch optimizers.
 
 ```python3
-optimizer = adamod.AdaMod(model.parameters(), lr=1e-3, gamma=0.999)
+optimizer = adamod.AdaMod(model.parameters(), lr=1e-3, beta3=0.999)
 ```
-As described in the paper, AdaMod can smooths out unexpected large learning rates throughout the training process. The `gamma` parameter is the smoothing coefficient for actual learning rate, which controls the average range. In common cases, a `gamma` in `{0.999,0.9999}` can achieve relatively good and stable results. See the paper for more details.
+As described in the paper, AdaMod can smooths out unexpected large learning rates throughout the training process. The `beta3` parameter is the smoothing coefficient for actual learning rate, which controls the average range. In common cases, a `beta3` in `{0.999,0.9999}` can achieve relatively good and stable results. See the paper for more details.
 
 ## Demos
 
