@@ -11,13 +11,13 @@ class AdaMod(Optimizer):
         lr (float, optional): learning rate (default: 1e-3)
         betas (Tuple[float, float], optional): coefficients used for computing
             running averages of gradient and its square (default: (0.9, 0.999))
-        gamma (float, optional): smoothing coefficient for actual learning rate (default: 0.9999)
+        beta3 (float, optional): smoothing coefficient for adaptive learning rates (default: 0.9999)
         eps (float, optional): term added to the denominator to improve
             numerical stability (default: 1e-8)
         weight_decay (float, optional): weight decay (L2 penalty) (default: 0)
     """
 
-    def __init__(self, params, lr=1e-3, betas=(0.9, 0.999), gamma=0.999,
+    def __init__(self, params, lr=1e-3, betas=(0.9, 0.999), beta3=0.999,
                  eps=1e-8, weight_decay=0):
         if not 0.0 <= lr:
             raise ValueError("Invalid learning rate: {}".format(lr))
@@ -27,9 +27,9 @@ class AdaMod(Optimizer):
             raise ValueError("Invalid beta parameter at index 0: {}".format(betas[0]))
         if not 0.0 <= betas[1] < 1.0:
             raise ValueError("Invalid beta parameter at index 1: {}".format(betas[1]))
-        if not 0.0 <= gamma < 1.0:
-            raise ValueError("Invalid gamma parameter: {}".format(gamma))
-        defaults = dict(lr=lr, betas=betas, gamma=gamma, eps=eps,
+        if not 0.0 <= beta3 < 1.0:
+            raise ValueError("Invalid beta3 parameter: {}".format(beta3))
+        defaults = dict(lr=lr, betas=betas, beta3=beta3, eps=eps,
                         weight_decay=weight_decay)
         super(AdaMod, self).__init__(params, defaults)
 
@@ -88,7 +88,7 @@ class AdaMod(Optimizer):
                 # Applies momental bounds on actual learning rates
                 step_size = torch.full_like(denom, step_size)
                 step_size.div_(denom)
-                exp_avg_lr.mul_(group['gamma']).add_(1 - group['gamma'], step_size)
+                exp_avg_lr.mul_(group['beta3']).add_(1 - group['beta3'], step_size)
                 step_size = torch.min(step_size,  exp_avg_lr)
                 step_size.mul_(exp_avg)
 
