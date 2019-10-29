@@ -2,6 +2,8 @@
 
 An optimizer which exerts adaptive momental upper bounds on individual learning rates to prevent them becoming undesirably lager than what the historical statistics suggest and avoid the non-convergence issue, thus to a better performance. Strong empirical results on many deep learning applications demonstrate the effectiveness of our proposed method especially on complex networks such as DenseNet and Transformer.
 
+Based on Ding et al. (2019). [An Adaptive and Momental Bound Method for Stochastic Learning.](https://arxiv.org/abs/1910.12249)
+
 <p align='center'><img src='img/Loss.bmp' width="100%"/></p>
 
 ## Installation
@@ -30,6 +32,19 @@ You can use AdaMod just like any other PyTorch optimizers.
 optimizer = adamod.AdaMod(model.parameters(), lr=1e-3, beta3=0.999)
 ```
 As described in the paper, AdaMod can smooths out unexpected large learning rates throughout the training process. The `beta3` parameter is the smoothing coefficient for actual learning rate, which controls the average range. In common cases, a `beta3` in `{0.999,0.9999}` can achieve relatively good and stable results. See the paper for more details.
+
+## Citation
+
+If you use AdaMod in your research, please cite [An Adaptive and Momental Bound Method for Stochastic Learning.](https://arxiv.org/abs/1910.12249) Thanks!
+
+```
+@article{ding2019adaptive,
+  title={An Adaptive and Momental Bound Method for Stochastic Learning},
+  author={Jianbang Ding and Xuancheng Ren and Ruixuan Luo and Xu Sun},
+  journal={arXiv preprint arXiv:1910.12249},
+  year={2019}
+}
+```
 
 ## Demos
 
