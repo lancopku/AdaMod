@@ -14,7 +14,7 @@ We have already provided the results produced by AdaMod with default settings an
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | SGD | 0.05 | 0.9 | | | | |
 | Adam | 0.001 | | 0.9 | 0.999 | | |
-| AdaBound (def.) | 0.001 | | 0.9 | 0.999 | 0.999 |
+| AdaMod (def.) | 0.001 | | 0.9 | 0.999 | 0.999 |
 
 For the sake of better performance, we apply a weight decay of `5e-4` to all the optimizers (decoupled weight decay to adaptive methods).
 
