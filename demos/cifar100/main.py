@@ -173,7 +173,7 @@ def main():
     net = build_model(args, device, ckpt=ckpt)
     criterion = nn.CrossEntropyLoss()
     optimizer = create_optimizer(args, net.parameters())
-    scheduler = optim.lr_scheduler.MultiStepLR(optimizer, [150, 225], beta3=0.1,
+    scheduler = optim.lr_scheduler.MultiStepLR(optimizer, [150, 225], gamma=0.1,
                                                last_epoch=start_epoch)
     train_accuracies = []
     test_accuracies = []
