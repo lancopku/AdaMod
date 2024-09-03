@@ -68,7 +68,7 @@ For the full list of demos, please refer to [this page](./demos).
 
 ## Contributors
 
-[@dingjianbang]([https://github.com/luoruixuan](https://github.com/karrynest)
+[@dingjianbang](https://github.com/karrynest)
 [@luoruixuan](https://github.com/luoruixuan)
 
 
