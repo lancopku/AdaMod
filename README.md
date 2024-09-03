@@ -35,8 +35,24 @@ As described in the paper, AdaMod can smooths out unexpected large learning rate
 
 ## Citation
 
-If you use AdaMod in your research, please cite [An Adaptive and Momental Bound Method for Stochastic Learning.](https://arxiv.org/abs/1910.12249) Thanks!
+If you use AdaMod in your research, please cite FINAL VERSION [An Adaptive Learning Method for Solving the Extreme Learning Rate Problem of Transformer.](https://link.springer.com/chapter/10.1007/978-3-031-44693-1_29) Thanks!
+```
+@inproceedings{DBLP:conf/nlpcc/DingRL23,
+  author       = {Jianbang Ding and
+                  Xuancheng Ren and
+                  Ruixuan Luo},
+  title        = {An Adaptive Learning Method for Solving the Extreme Learning Rate
+                  Problem of Transformer},
+  booktitle    = {{NLPCC} {(1)}},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {14302},
+  pages        = {361--372},
+  publisher    = {Springer},
+  year         = {2023}
+}
+```
 
+The arXiv version is available as an alternative:
 ```
 @article{ding2019adaptive,
   title={An Adaptive and Momental Bound Method for Stochastic Learning},
@@ -52,6 +68,7 @@ For the full list of demos, please refer to [this page](./demos).
 
 ## Contributors
 
+[@dingjianbang]([https://github.com/luoruixuan](https://github.com/karrynest))
 [@luoruixuan](https://github.com/luoruixuan)
 
 
