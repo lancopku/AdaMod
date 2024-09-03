@@ -62,7 +62,7 @@ The arXiv version is available as an alternative:
 }
 ```
 
-## Demos
+## Demo
 
 For the full list of demos, please refer to [this page](./demos).
 
