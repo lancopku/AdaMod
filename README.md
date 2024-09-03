@@ -39,8 +39,7 @@ If you use AdaMod in your research, please cite FINAL VERSION [An Adaptive Learn
 ```
 @inproceedings{DBLP:conf/nlpcc/DingRL23,
   author       = {Jianbang Ding and Xuancheng Ren and Ruixuan Luo},
-  title        = {An Adaptive Learning Method for Solving the Extreme Learning Rate
-                  Problem of Transformer},
+  title        = {An Adaptive Learning Method for Solving the Extreme Learning Rate Problem of Transformer},
   booktitle    = {{NLPCC} {(1)}},
   series       = {Lecture Notes in Computer Science},
   volume       = {14302},
