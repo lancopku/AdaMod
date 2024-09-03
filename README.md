@@ -38,9 +38,7 @@ As described in the paper, AdaMod can smooths out unexpected large learning rate
 If you use AdaMod in your research, please cite FINAL VERSION [An Adaptive Learning Method for Solving the Extreme Learning Rate Problem of Transformer.](https://link.springer.com/chapter/10.1007/978-3-031-44693-1_29) Thanks!
 ```
 @inproceedings{DBLP:conf/nlpcc/DingRL23,
-  author       = {Jianbang Ding and
-                  Xuancheng Ren and
-                  Ruixuan Luo},
+  author       = {Jianbang Ding and Xuancheng Ren and Ruixuan Luo},
   title        = {An Adaptive Learning Method for Solving the Extreme Learning Rate
                   Problem of Transformer},
   booktitle    = {{NLPCC} {(1)}},
