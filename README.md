@@ -2,7 +2,7 @@
 
 An optimizer which exerts adaptive momental upper bounds on individual learning rates to prevent them becoming undesirably lager than what the historical statistics suggest and avoid the non-convergence issue, thus to a better performance. Strong empirical results on many deep learning applications demonstrate the effectiveness of our proposed method especially on complex networks such as DenseNet and Transformer.
 
-Based on Ding et al. (2019). [An Adaptive and Momental Bound Method for Stochastic Learning.](https://arxiv.org/abs/1910.12249)
+Based on Ding et al. (2023). [An Adaptive Learning Method for Solving the Extreme Learning Rate Problem of Transformer.](https://link.springer.com/chapter/10.1007/978-3-031-44693-1_29)
 
 <p align='center'><img src='img/Loss.bmp' width="100%"/></p>
 
